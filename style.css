@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+
+body {
+  font-family: "Raleway", sans-serif;
+  /* height: 100vh; */
+  /* center center = for both the X + Y  axis */
+  /* background: #333 url("showcase.jpg") no-repeat center center / cover; */
+  color: white;
+  overflow: hidden;
+}
+
+/* Default to hide the video on all devices */
+#video {
+  display: none;
+}
+
+/* Default to display the image on all devices */
+#videosubstitute {
+  display: block;
+  width: auto;
+  height: 100%;
+}
+
+/* html,
+body {
+  height: 100%;
+  margin: 0;
+} */
+#fullScreenDiv {
+  width: 100%;
+  min-height: 100%;
+  /* Set the height to match that of the viewport. */
+  height: 100vh;
+  width: auto;
+  padding: 0 !important;
+  margin: 0 !important;
+  background-color: gray;
+  position: relative;
+}
+#video {
+  width: 100vw;
+  height: auto;
+  object-fit: cover;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+}
+
+.container {
+  /* ----from messagebox------ */
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  /* ---- end from message box */
+
+  /* flex puts it by default in horizontal */
+  display: flex;
+  /* putting it in vertical */
+  flex-direction: column;
+  justify-content: center;
+  /* the HEIGHT makes the justify content => centered! */
+  height: 100%;
+  padding: 0 3rem;
+  z-index: 3;
+}
+
+/* h1 AND h2 */
+h1,
+h2 {
+  font-weight: 200;
+  margin: 0.4rem;
+  text-shadow: 3px 3px 20px black;
+}
+h1 {
+  font-size: 3.5rem;
+  text-shadow: 3px 3px 20px black;
+}
+h2 {
+  font-size: 2rem;
+  color: rgb(45, 81, 170);
+  text-shadow: 3px 3px 20px white;
+}
+
+/* Cursor */
+/* targeting the .txt inside the .txt-type (parent) */
+.txt-type > .txt {
+  color: white;
+  border-right: 0.2rem solid #777;
+  border-color: red;
+}
+
+/* ====== Icons ====== */
+.icons {
+  margin-top: 1rem;
+}
+.icons a {
+  padding: 0.4rem;
+  color: #aaa;
+  text-decoration: none;
+}
+.icons a:hover {
+  color: red;
+  transition: all 0.5s ease-out;
+}
+
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 5rem;
+  }
+}
+@media (max-width: 800px) {
+  .container {
+    padding: 0 1rem;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* ========== MEDIA QUERIES ========== */
+@media (min-aspect-ratio: 16/9) {
+  #video {
+    height: 100%;
+    top: -100%;
+  }
+  #videosubstitute {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  #video {
+    width: 100%;
+    left: -100%;
+  }
+  #videosubstitute {
+    display: block;
+    width: auto;
+    height: 100%;
+  }
+}
+/*if there is 992  pixels or more, then display the video but hide the image*/
+@media only screen and (min-width: 992px) {
+  #video {
+    display: block;
+  }
+  #videosubstitute {
+    display: none;
+  }
+}
+
+/* The container for our text and stuff */
+#messageBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
